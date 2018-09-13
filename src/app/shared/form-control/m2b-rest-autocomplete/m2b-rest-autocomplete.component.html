@@ -1,0 +1,11 @@
+<form>
+    <mat-form-field class="full-width">
+        <input type="text" [placeholder]="this.placeHolderName" aria-label="this.placeHolderName" matInput
+            [formControl]="myControl" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option[showProperty]">
+                {{option[showProperty]}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</form>
